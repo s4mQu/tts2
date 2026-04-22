@@ -1,0 +1,18 @@
+# Core TTS
+chatterbox-tts==0.1.7
+
+# Server
+fastapi==0.136.0
+uvicorn==0.45.0
+pydantic==2.13.3
+python-multipart==0.0.26
+
+# PyTorch (CUDA 12.4)
+torch==2.6.0
+torchaudio==2.6.0
+
+# HTTP client (client.py)
+requests==2.33.1
+
+# Must be <71 — setuptools 71+ removed pkg_resources, which resemble-perth requires
+setuptools==70.3.0
