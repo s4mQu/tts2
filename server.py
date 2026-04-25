@@ -15,7 +15,7 @@ from chatterbox.tts import ChatterboxTTS, Conditionals
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
-VOICE_REF   = Path("female_shadowheart.flac")
+VOICE_REF   = Path("sydney.wav")
 CONDS_CACHE = Path("conditionals.pt")
 DEVICE      = "cuda"
 MAX_CHUNK_CHARS = 220
@@ -181,7 +181,7 @@ app = FastAPI(title="Chatterbox TTS Server", lifespan=lifespan)
 
 class SynthesizeRequest(BaseModel):
     text: str
-    quality_preset: str = "natural"
+    quality_preset: str = "balanced"
     sentence_pause_ms: int = Field(default=140, ge=0, le=500)
     exaggeration: float | None = Field(default=None, ge=0.1, le=1.5)
     cfg_weight: float | None = Field(default=None, ge=0.1, le=1.5)
